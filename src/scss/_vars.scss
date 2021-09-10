@@ -1,12 +1,9 @@
-$font-sans-serif: arial, "Segoe UI", roboto, "Helvetica Neue", helvetica, sans-serif;
-$font-base: 12px/1.5 $font-sans-serif;
+$font-sans-serif: "IBM Plex Sans", "Segoe UI", roboto, "Helvetica Neue", helvetica, arial, sans-serif;
+$font-serif: "Playfair Display", georgia, times, "Times New Roman", serif;
 
-$main-color: #1e1e1e;
-$second-color: #4764b0;
-$border-color: #d2c8c8;
+$main-color: #182141;
+$second-color: #fff;
 
-$desktop: 1340px;
-$laptop: 1020px;
-$tablet: 700px;
+$desktop: 1434px;
+$tablet: 1020px;
 
-$border: 1px solid $border-color;

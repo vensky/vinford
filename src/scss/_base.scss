@@ -1,81 +1,40 @@
 body {
-    min-width: 300px;
+    min-width: 320px;
     background-color: #fff;
     color: $main-color;
-    font: $font-base;
+    font-size: 14px;
+    font-family: $font-sans-serif;
+    height: 100vh;
+    min-height: 100vh;
 
-    @media (min-width: $laptop) {
-        font-size: 16px;
+    @media (min-width: $tablet) {
+        font-size: 15px;
+    }
+
+    @media (min-width: $desktop) {
+        font-size: 18px;
     }
 }
 
 .container {
     margin: 0 auto;
+    padding: 0 20px;
 
     @media (min-width: $tablet) {
-        max-width: 610px;
-    }
-
-    @media (min-width: $laptop) {
-        max-width: 930px;
+        padding: 0 30px;
+        max-width: 964px;
     }
 
     @media (min-width: $desktop) {
-        max-width: 1250px;
+        max-width: 1434px;
     }
 }
 
 .main {
-    padding-right: 15px;
-    padding-bottom: 30px;
-    padding-left: 15px;
 
-    @media (min-width: $tablet) {
-        padding-right: 0;
-        padding-bottom: 114px;
-        padding-left: 0;
-    }
-
-    &__container {
-        background-color: #f5f0f0;
-    }
 }
 
-.tile {
-    position: relative;
-    z-index: 2;
-    top: -40px;
-    padding-top: 28px;
-    padding-right: 15px;
-    padding-bottom: 40px;
-    padding-left: 20px;
-    background-color: #fff;
-
-    @media (min-width: $laptop) {
-        top: -80px;
-        padding-top: 42px;
-        padding-right: 30px;
-        padding-bottom: 52px;
-        padding-left: 60px;
-    }
-
-    @media (min-width: $desktop) {
-        width: 470px;
-    }
-
-    &--left {
-        left: -20px;
-
-        @media (min-width: $laptop) {
-            left: -62px;
-        }
-    }
-
-    &--right {
-        right: 0;
-
-        @media (min-width: $laptop) {
-            /* left: -62px; */
-        }
-    }
+.section {
+    height: 100vh;
+    min-height: 100vh;
 }
