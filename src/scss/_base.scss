@@ -1,0 +1,30 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+    text-size-adjust: 100%;
+    margin: 0;
+
+}
+
+body {
+    font: $font-base;
+    color: #000;
+    margin: 0;
+}
+
+.svg-wrapper {
+    @include visuallyhidden;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 940px;
+    padding: 0 20px;
+}
