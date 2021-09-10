@@ -1,21 +1,25 @@
-@import "_variables";
-@import "_fonts";
+@import "_normalize";
+
+@import "_vars";
 
 @import "_mixins";
-@import "_helpers";
 
-// @import "_vendor/_";
+@import "_text";
 
 @import "_base";
-/*@import "_typography";*/
 
-/*@import "_components/_btn";*/
-/*@import "_components/_form";*/
-/*@import "_components/_modal";*/
-/*@import "_components/_social";*/
+@import "_vendor/_swiper";
 
-/*@import "_blocks/_header";*/
-/*@import "_blocks/_footer";*/
-/*@import "_blocks/_nav";*/
-/*@import "_blocks/_hero";*/
-/*@import "_blocks/_features";*/
+@import "_components/_swiper";
+
+@import "_sections/_header";
+
+@import "_sections/_about";
+
+@import "_sections/_projects";
+
+@import "_sections/_today";
+
+@import "_sections/_personal";
+
+@import "_sections/_bonus";

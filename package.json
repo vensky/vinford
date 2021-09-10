@@ -1,77 +1,71 @@
- {
-    "name": "",
-    "version": "0.0.0",
-    "description": "",
-    "main": "index.html",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "./node_modules/.bin/gulp",
-        "build": "NODE_ENV=build ./node_modules/.bin/gulp build",
-        "gulp": "./node_modules/.bin/gulp"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/vensky/"
-    },
-    "author": "vensky",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/vensky/"
-    },
-    "homepage": "https://github.com/vensky/#readme",
-    "devDependencies": {
-        "@babel/core": "^7.11.6",
-        "@babel/preset-env": "^7.11.5",
-        "babel-register": "^6.26.0",
-        "browser-sync": "^2.26.7",
-        "del": "^6.0.0",
-        "gulp": "^4.0.2",
-        "gulp-autoprefixer": "^7.0.1",
-        "gulp-babel": "^8.0.0",
-        "gulp-clean-css": "^4.3.0",
-        "gulp-concat": "^2.6.1",
-        "gulp-dart-sass": "^1.0.2",
-        "gulp-file-include": "^2.2.2",
-        "gulp-fonter": "^0.3.0",
-        "gulp-html-bem-validator": "^1.0.5",
-        "gulp-html-replace": "^1.6.2",
-        "gulp-htmlmin": "^5.0.1",
-        "gulp-if": "^3.0.0",
-        "gulp-imagemin": "^7.1.0",
-        "gulp-newer": "^1.4.0",
-        "gulp-notify": "^3.2.0",
-        "gulp-rename": "^2.0.0",
-        "gulp-svgstore": "^7.0.1",
-        "gulp-terser": "^1.4.0",
-        "gulp-ttf2woff": "^1.1.1",
-        "gulp-ttf2woff2": "^4.0.1",
-        "gulp-w3c-html-validator": "^2.0.1",
-        "gulp-webp": "^4.0.1",
-        "gulp-webp-in-html": "^1.0.1",
-        "husky": "^4.2.5",
-        "lint-staged": "^10.2.11",
-        "multipipe": "^4.0.0",
-        "prettier": "^2.2.1",
-        "stylelint": "^13.9.0",
-        "stylelint-config-prettier": "^8.0.2",
-        "stylelint-config-recommended": "^3.0.0",
-        "stylelint-order": "^4.1.0"
-    },
-    "dependencies": {
-        "sass": "^1.32.5",
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
-    },
-    "lint-staged": {
-        "linters": {
-            "*.css": [
-                "prettier --write",
-                "stylelint --fix --config ./.stylelintrc-format",
-                "git add"
-            ]
-        }
-    }
+{
+  "name": "vinford",
+  "version": "1.0.0",
+  "description": "Landing Vinford",
+  "main": "index.html",
+  "scripts": {
+    "start": "NODE_ENV=dev npx gulp start",
+    "imgmin": "NODE_ENV=dev npx gulp img",
+    "test": "NODE_ENV=test npx gulp test",
+    "fix": "npx stylelint 'src/scss/**/*.scss' --fix",
+    "build": "NODE_ENV=build npx gulp build",
+    "prepare": "husky install && npx husky add .husky/\"npm test\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vensky/vinford.git"
+  },
+  "author": "vensky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vensky/vinford/issues",
+    "issue": "Fixed error es2021 by deleting the eslint folder in the node_modules folder for gulp-eslint"
+  },
+  "homepage": "https://github.com/vensky/vinford#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "browser-sync": "^2.26.14",
+    "chrome-launcher": "^0.14.0",
+    "del": "^6.0.0",
+    "eslint": "^7.28.0",
+    "eslint-config-htmlacademy": "^4.0.1",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-connect": "^5.7.0",
+    "gulp-dart-sass": "^1.0.2",
+    "gulp-eslint": "^6.0.0",
+    "gulp-file-include": "^2.3.0",
+    "gulp-html-bem-validator": "^1.0.5",
+    "gulp-html-replace": "^1.6.2",
+    "gulp-htmlhint": "^4.0.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-stylelint": "^13.0.0",
+    "gulp-svgstore": "^7.0.1",
+    "gulp-terser": "^2.0.1",
+    "gulp-ttf2woff": "^1.1.1",
+    "gulp-ttf2woff2": "^4.0.1",
+    "gulp-typograf": "^4.0.3",
+    "gulp-w3c-html-validator": "2.0",
+    "gulp-webp": "^4.0.1",
+    "husky": "^6.0.0",
+    "lighthouse": "^8.0.0",
+    "multipipe": "^4.0.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-idiomatic-order": "^8.1.0",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.19.0"
+  }
 }

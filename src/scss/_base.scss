@@ -1,30 +1,81 @@
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-html {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    scroll-behavior: smooth;
-    text-size-adjust: 100%;
-    margin: 0;
-
-}
-
 body {
+    min-width: 300px;
+    background-color: #fff;
+    color: $main-color;
     font: $font-base;
-    color: #000;
-    margin: 0;
-}
 
-.svg-wrapper {
-    @include visuallyhidden;
+    @media (min-width: $laptop) {
+        font-size: 16px;
+    }
 }
 
 .container {
     margin: 0 auto;
-    max-width: 940px;
-    padding: 0 20px;
+
+    @media (min-width: $tablet) {
+        max-width: 610px;
+    }
+
+    @media (min-width: $laptop) {
+        max-width: 930px;
+    }
+
+    @media (min-width: $desktop) {
+        max-width: 1250px;
+    }
+}
+
+.main {
+    padding-right: 15px;
+    padding-bottom: 30px;
+    padding-left: 15px;
+
+    @media (min-width: $tablet) {
+        padding-right: 0;
+        padding-bottom: 114px;
+        padding-left: 0;
+    }
+
+    &__container {
+        background-color: #f5f0f0;
+    }
+}
+
+.tile {
+    position: relative;
+    z-index: 2;
+    top: -40px;
+    padding-top: 28px;
+    padding-right: 15px;
+    padding-bottom: 40px;
+    padding-left: 20px;
+    background-color: #fff;
+
+    @media (min-width: $laptop) {
+        top: -80px;
+        padding-top: 42px;
+        padding-right: 30px;
+        padding-bottom: 52px;
+        padding-left: 60px;
+    }
+
+    @media (min-width: $desktop) {
+        width: 470px;
+    }
+
+    &--left {
+        left: -20px;
+
+        @media (min-width: $laptop) {
+            left: -62px;
+        }
+    }
+
+    &--right {
+        right: 0;
+
+        @media (min-width: $laptop) {
+            /* left: -62px; */
+        }
+    }
 }

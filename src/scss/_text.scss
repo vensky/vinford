@@ -1,0 +1,67 @@
+.title {
+    margin: 10px 0 14px;
+    color: $second-color;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.16;
+
+    @media (min-width: $laptop) {
+        margin-bottom: 20px;
+        font-size: 32px;
+    }
+}
+
+.subtitle {
+    margin: 0;
+    font-size: 14px;
+    font-weight: normal;
+
+    @media (min-width: $laptop) {
+        font-size: 18px;
+    }
+}
+
+p {
+    margin: 8px 0;
+
+    @media (min-width: $laptop) {
+        margin: 10px 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+ul {
+
+    @include no-list;
+
+    li {
+        position: relative;
+        padding-left: 18px;
+        margin-bottom: 8px;
+
+        @media (min-width: $laptop) {
+            padding-left: 24px;
+            margin-bottom: 10px;
+        }
+
+        &::before {
+            position: absolute;
+            top: 9px;
+            left: 0;
+            display: inline-block;
+            width: 12px;
+            height: 1px;
+            background-color: $second-color;
+            content: "";
+
+            @media (min-width: $laptop) {
+                top: 12px;
+                width: 16px;
+                height: 2px;
+            }
+        }
+    }
+}
