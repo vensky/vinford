@@ -7,7 +7,7 @@ const svgstore = require('gulp-svgstore');
 module.exports = function svg() {
     return multipipe(
         src('src/assets/icons/*.svg'),
-        imagemin.svgo(),
+        // imagemin.svgo(),
         svgstore({
             inlineSvg: true,
         }),

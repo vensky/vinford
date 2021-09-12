@@ -1,0 +1,12 @@
+.phone {
+    @include no-list;
+    margin-bottom: 40px;
+
+    > li:not(:last-child) {
+            margin-bottom: 20px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}

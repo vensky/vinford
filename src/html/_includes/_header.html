@@ -1,41 +1,48 @@
-<header class="header" hidden>
+<header class="header">
     <div class="container header__container">
-
         <a class="logo header__logo" href="#about">
-            <img src="img/" alt="">
+            <img src="img/logo.svg" alt="Логотип Vinford">
         </a>
-
-        <div class="header__wrapper">
-                    <nav class="nav">
-            <ul class="nav__list">
-                <li><a class="nav__link" href="#about">О нас</a></li>
-                <li><a class="nav__link" href="#parents">Родителям</a></li>
-                <li><a class="nav__link" href="#contacts">Наши сады</a></li>
-                <li><a class="nav__link" href="#contacts">Контакты</a></li>
+        <nav class="nav">
+            <div class="nav__wrapper">
+                <ul class="nav__list">
+                    <li><a class="nav__link" href="#about">О нас</a></li>
+                    <li><a class="nav__link" href="#parents">Родителям</a></li>
+                    <li><a class="nav__link" href="#contacts">Наши сады</a></li>
+                    <li><a class="nav__link" href="#contacts">Контакты</a></li>
+                </ul>
+                <ul class="phone">
+                    <li><a href="tel:+88005559516">8 800 555 9516</a></li>
+                    <li><a href="tel:+79104230336">7 910 423 0336</a></li>
+                </ul>
+            </div>
+            <ul class="social">
+                <li>
+                    <a class="social__link" href="https://vk.com/" target="_blank" rel="noopener noreferrer">
+                        <svg class="social__icon social__icon--vk">
+                            <use xlink:href="#icon-vk"></use>
+                        </svg>
+                        <span>ВКонтакте</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="social__link" href="https://ok.ru/" target="_blank" rel="noopener noreferrer">
+                        <svg class="social__icon social__icon--ok">
+                            <use xlink:href="#icon-ok"></use>
+                        </svg>
+                        <span>Одноклассники</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="social__link" href="https://www.instagram.com/?hl=ru" target="_blank" rel="noopener noreferrer">
+                        <svg class="social__icon social__icon--ig">
+                            <use xlink:href="#icon-ig"></use>
+                        </svg>
+                        <span>Инстаграм</span>
+                    </a>
+                </li>
             </ul>
         </nav>
-        <ul class="phone">
-            <li><a href="tel:+88005559516">8 800 555 9516</a></li>
-            <li><a href="tel:+79104230336">7 910 423 0336</a></li>
-        </ul>
-        </div>
-
-        <ul class="social">
-            <li>
-                <a href="https://vk.com/" target="_blank" rel="noopener noreferrer">
-                    ВКонтакте
-                </a>
-            </li>
-            <li>
-                <a href="https://ok.ru/" target="_blank" rel="noopener noreferrer">
-                    Одноклассники
-                </a>
-            </li>
-            <li>
-                <a href="https://www.instagram.com/?hl=ru" target="_blank" rel="noopener noreferrer">
-                    Инстаграм
-                </a>
-            </li>
-        </ul>
+        <button class="btn-nav header__btn-nav"><span>Меню</span></button>
     </div>
 </header>

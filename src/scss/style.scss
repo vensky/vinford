@@ -4,9 +4,19 @@
 
 @import "_mixins";
 
+@import "_helpers";
+
 @import "_text";
 
 @import "_base";
+
+@import "_components/_buttons";
+
+@import "_components/_nav";
+
+@import "_components/_phone";
+
+@import "_components/_social";
 
 @import "_sections/_header";
 

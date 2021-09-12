@@ -1,0 +1,54 @@
+.btn-nav {
+    @include no-btn;
+    width: 20px;
+    height: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 0;
+    z-index: 12;
+
+    &:hover {
+
+        &::before,
+        &::after,
+        span {
+            background-color: $main-color;
+        }
+    }
+
+    &.btn-nav--active {
+        &::before {
+            transform: rotate(45deg) translateY(6px);
+            ;
+            width: 22.36px;
+        }
+
+        &::after {
+            transform: rotate(-45deg) translateY(-6px);
+            width: 22.36px;
+        }
+
+        span {
+            display: none;
+        }
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: $second-color;
+        transition: background-color 0.25s ease-out 0s;
+    }
+
+    span {
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: $second-color;
+        transition: background-color 0.25s ease-out 0s;
+    }
+}
