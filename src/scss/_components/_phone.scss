@@ -2,11 +2,26 @@
     @include no-list;
     margin-bottom: 40px;
 
-    > li:not(:last-child) {
-            margin-bottom: 20px;
+    @media (min-width: $tablet) {
+        margin-bottom: 0;
+    }
+
+    >li:not(:last-child) {
+        margin-bottom: 8px;
+
+        @media (min-width: $desktop) {
+            margin-bottom: 12px;
+        }
     }
 
     a {
         text-decoration: none;
+        transition: color 0.25s ease-out 0s;
+
+        &:hover {
+            @media (min-width: $tablet) {
+                color: $main-color;
+            }
+        }
     }
 }

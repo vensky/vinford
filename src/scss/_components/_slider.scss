@@ -1,0 +1,42 @@
+.slider {
+    &__wrapper {
+        display: flex;
+        flex-shrink: 0;
+        overflow: hidden;
+    }
+
+    &__slide {
+        flex-shrink: 0;
+        width: 100%;
+
+        @media (min-width: $tablet) {
+            min-height: 160px;
+        }
+
+        @media (min-width: $desktop) {
+            min-height: 200px;
+        }
+    }
+
+    &__bullet {
+        @include no-btn;
+        font-size: 0;
+        width: 60px;
+        height: 4px;
+        background-color: $second-color;
+        opacity: 0.2;
+        border-radius: 2px;
+
+        @media (min-width: $tablet) {
+            width: 92px;
+        }
+
+        &:not(:last-child) {
+            margin-right: 8px;
+        }
+
+        &--active {
+            opacity: 1;
+        }
+    }
+}

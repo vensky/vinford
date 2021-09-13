@@ -1,5 +1,7 @@
 @import "_normalize";
 
+@import "_fonts";
+
 @import "_vars";
 
 @import "_mixins";
@@ -17,6 +19,10 @@
 @import "_components/_phone";
 
 @import "_components/_social";
+
+@import "_components/_slider";
+
+@import "_components/_more";
 
 @import "_sections/_header";
 

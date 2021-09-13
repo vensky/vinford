@@ -8,8 +8,11 @@
     font-size: 0;
     z-index: 12;
 
-    &:hover {
+    @media (min-width: $tablet) {
+        display: none;
+    }
 
+    &:hover {
         &::before,
         &::after,
         span {
@@ -20,7 +23,6 @@
     &.btn-nav--active {
         &::before {
             transform: rotate(45deg) translateY(6px);
-            ;
             width: 22.36px;
         }
 

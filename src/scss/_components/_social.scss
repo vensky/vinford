@@ -2,11 +2,14 @@
     @include no-list;
     display: flex;
     font-size: 0;
-    margin-bottom: 40px;
     width: 133px;
     height: 20px;
     justify-content: space-between;
     align-items: center;
+
+    @media (min-width: $desktop) {
+        width: 182px;
+    }
 
     a {
         display: block;
@@ -14,23 +17,43 @@
     }
 
     &__icon {
-        &:hover {
-            fill: $main-color;
-        }
+        transition: fill 0.25s ease-out 0s, stroke 0.25s ease-out 0s;
 
         &--vk {
+            fill: $second-color;
             height: 12px;
             width: 22px;
+
+            &:hover {
+                @media (min-width: $tablet) {
+                    fill: $main-color;
+                }
+            }
         }
 
         &--ok {
+            fill: $second-color;
             height: 20px;
             width: 13px;
+
+            &:hover {
+                @media (min-width: $tablet) {
+                    fill: $main-color;
+                }
+            }
         }
 
         &--ig {
+            fill: none;
+            stroke: $second-color;
             width: 18px;
             height: 18px;
+
+            &:hover {
+                @media (min-width: $tablet) {
+                    stroke: $main-color;
+                }
+            }
         }
     }
 }
