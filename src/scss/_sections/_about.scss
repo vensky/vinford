@@ -3,7 +3,8 @@
     color: $second-color;
     display: flex;
 
-    @media (min-width: $tablet) {
+    @media (min-width: $tablet), (orientaion: portrait) {
+        height: 100vh;
         min-height: 625px;
     }
 
@@ -24,9 +25,9 @@
             height: 100%;
         }
 
-                        @media (min-width: $tablet) {
-        min-height: 625px;
-    }
+        @media (min-width: $tablet) {
+            min-height: 625px;
+        }
 
         &::before {
             content: "";

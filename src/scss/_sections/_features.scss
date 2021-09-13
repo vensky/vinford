@@ -1,0 +1,55 @@
+.features {
+
+    &__container {
+        padding-top: 27px;
+
+        @media (min-width: $tablet) {
+            padding-top: 0;
+            height: 100%;
+            display: flex;
+        }
+    }
+
+    &__content {
+        @media (min-width: $tablet) {
+            padding-top: 27px;
+
+        height: 100%;
+        max-width: 414px;
+        background-color: #fbfbfb;
+        padding-right: 83px;
+    }}
+
+    &__title {
+        margin-top: 34px;
+        margin-bottom: 34px;
+    }
+
+    &__img {
+        border-radius: 20px;
+        height: 161px;
+        overflow: hidden;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__subtitle {
+        margin-top: 21px;
+        margin-bottom: 25px;
+    }
+
+    &__desc {
+        color: #9a9a9a;
+        margin: 0;
+    }
+
+    &__tabs {
+        margin-top: 20px;
+        padding-top: 47px;
+    }
+
+}

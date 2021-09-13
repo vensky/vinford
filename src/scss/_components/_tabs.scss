@@ -1,0 +1,57 @@
+.tabs {
+    @include no-list;
+    display: flex;
+    overflow: hidden;
+
+    > li:not(:last-child) {
+        margin-right: 10px;
+    }
+
+    @media (min-width: $tablet) {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        max-height: 350px;
+    }
+}
+
+.tab {
+    @include no-btn;
+    background-color: transparent;
+    border-radius: 16px;
+    height: 96px;
+    width: 131px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    padding: 20px;
+    font-family: $font-serif;
+
+    @media (min-width: $tablet) {
+        width: 219px;
+        height: 160px;
+    }
+
+    &--active {
+        background-color: #213067;
+        color: $second-color;
+
+        .tab__icon {
+            fill: $second-color;
+        }
+    }
+
+    &__icon {
+        fill: $main-color;
+        height: 26px;
+
+        &--health {
+            width: 32px;
+        }
+
+        &--video {
+            width: 42px;
+        }
+    }
+}
