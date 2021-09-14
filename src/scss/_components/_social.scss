@@ -26,7 +26,7 @@
 
             &:hover {
                 @media (min-width: $tablet) {
-                    fill: $main-color;
+                    fill: $hover-color;
                 }
             }
         }
@@ -38,7 +38,7 @@
 
             &:hover {
                 @media (min-width: $tablet) {
-                    fill: $main-color;
+                    fill: $hover-color;
                 }
             }
         }
@@ -51,7 +51,7 @@
 
             &:hover {
                 @media (min-width: $tablet) {
-                    stroke: $main-color;
+                    stroke: $hover-color;
                 }
             }
         }

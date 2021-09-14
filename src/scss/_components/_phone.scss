@@ -20,7 +20,7 @@
 
         &:hover {
             @media (min-width: $tablet) {
-                color: $main-color;
+                color: $hover-color;
             }
         }
     }
