@@ -90,8 +90,89 @@
 </symbol></svg>
     </div>
     <div class="wrapper">
+        <header class="header">
+    <div class="container header__container">
+        <a class="logo header__logo" href="#about">
+            <img src="img/logo.svg" alt="Логотип Vinford">
+        </a>
+        <nav class="nav header__nav">
+            <div class="nav__wrapper">
+                <ul class="nav__list">
+                    <li><a class="nav__link" href="#about">О нас</a></li>
+                    <li><a class="nav__link" href="#features">Родителям</a></li>
+                    <li><a class="nav__link" href="#contacts">Наши сады</a></li>
+                    <li><a class="nav__link" href="#contacts">Контакты</a></li>
+                </ul>
+                <ul class="phone">
+                    <li><a href="tel:+88005559516">8 800 555 9516</a></li>
+                    <li><a href="tel:+79104230336">7 910 423 0336</a></li>
+                </ul>
+            </div>
+            <ul class="social header__social">
+                <li>
+                    <a class="social__link" href="https://vk.com/" target="_blank" rel="noopener noreferrer">
+                        <svg class="social__icon social__icon--vk">
+                            <use xlink:href="#icon-vk"></use>
+                        </svg>
+                        <span>ВКонтакте</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="social__link" href="https://ok.ru/" target="_blank" rel="noopener noreferrer">
+                        <svg class="social__icon social__icon--ok">
+                            <use xlink:href="#icon-ok"></use>
+                        </svg>
+                        <span>Одноклассники</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="social__link" href="https://www.instagram.com/?hl=ru" target="_blank" rel="noopener noreferrer">
+                        <svg class="social__icon social__icon--ig">
+                            <use xlink:href="#icon-ig"></use>
+                        </svg>
+                        <span>Инстаграм</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <button class="btn-nav header__btn-nav"><span>Меню</span></button>
+    </div>
+</header>
 
         <main class="main">
+            <section class="section about" id="about">
+    <div class="about__video">
+        <video autoplay loop muted playsinline preload="auto" poster="/img/about.jpg">
+            <source src="img/about.av1.mp4" type="video/mp4; codecs=av01.0.05M.08">
+            <source src="img/about/animation.h264.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="container about__container">
+        <h1 class="about__title">Vinford</h1>
+        <p class="about__subtitle">Quality International School</p>
+        <div class="slider about__slider">
+            <div class="slider__wrapper">
+                <div class="slider__slide">
+                    <p class="about__text">Самая большая сеть Английских детских садов в России. Нам доверили воспитание своих деток более 5000 Пап и Мам.</p>
+                </div>
+                <div class="slider__slide">
+                    <p class="about__text">Педагоги English school</p>
+                </div>
+                <div class="slider__slide">
+                    <p class="about__text">Уже с трех лет наши малыши начинают интенсивно изучать Английский язык</p>
+                </div>
+            </div>
+            <div class="more about__more">
+                <a class="more__link" href="#parents">Подробнее</a>
+            </div>
+            <div class="slider__pagination about__pagination">
+                <button class="slider__bullet slider__bullet--active" type="button">К первому слайду</button>
+                <button class="slider__bullet" type="button">Ко второму слайду</button>
+                <button class="slider__bullet" type="button">К третьему слайду</button>
+            </div>
+        </div>
+    </div>
+</section>
 
             <section class="section features" id="features">
     <div class="container features__container">
@@ -178,6 +259,66 @@
                 </button>
             </li>
         </ul>
+    </div>
+</section>
+
+            <section class="section contacts">
+    <div class="map contacts__map">
+    </div>
+    <div class="container contacts__container">
+        <form class="contacts__form" method="" action="">
+            <!-- fieldset.field.select.task-form__group#selectTask
+                    span.field__label.select__label(id="service") Выбирите услугу -->
+            <div class="select contacts__select">
+                <select name="" id="" class="select__field select-native" name="service" aria-labelledby="service">
+                    <option value="#000" selected>Все садики на карте</option>
+                    <option value="#001" selected>Главный корпус, ул. Новый Арбат, 23</option>
+                    <option value="#002" selected>Главный корпус, ул. Новый Арбат, 23</option>
+                    <option value="#003" selected>Главный корпус, ул. Новый Арбат, 23</option>
+                    <option value="#004" selected>Главный корпус, ул. Новый Арбат, 23</option>
+                    <option value="#005" selected>Главный корпус, ул. Новый Арбат, 23</option>
+                    <option value="#006" selected>Главный корпус, ул. Новый Арбат, 23</option>
+                </select>
+                <div class="select-custom" aria-hidden="true">
+                    <div class="select__field select-custom__trigger">Все садики на карте Все садики на картеВсе садики на карте</div>
+                    <ul class="select-custom__options">
+                        <li data-value="#000">Все садики на карте</li>
+                        <li data-value="#001">Главный корпус, ул. Новый Арбат, 23</li>
+                        <li data-value="#002">Все садики на карте</li>
+                        <li data-value="#003">Все садики на карте</li>
+                        <li data-value="#004">Все садики на карте</li>
+                        <li data-value="#005">Все садики на карте</li>
+                        <li data-value="#006">Все садики на карте</li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+        <div class="contacts__tile">
+            <h2 class="title contacts__title">Контакты</h2>
+            <ul class="contacts__list">
+                <li class="contacts__item">
+                    <h3 class="subtitle contacts__subtitle">Колл-центр</h3>
+                    <ul class="contacts__phones">
+                        <li><a class="contacts__link" href="tel:88005559516">8 800 555 9516</a></li>
+                        <li><a class="contacts__link" href="tel:+79104230336">7 910 423 0336</a></li>
+                    </ul>
+                </li>
+                <li class="contacts__item">
+                    <h3 class="subtitle contacts__subtitle">По вопросам трудоустройства</h3>
+                    <ul class="contacts__phones">
+                        <li><a class="contacts__link" href="tel:88005559516">8 800 555 9516</a></li>
+                        <li><a class="contacts__link" href="mailto:hr@gornica-uzornica.ru">hr@gornica-uzornica.ru</a></li>
+                    </ul>
+                </li>
+                <li class="contacts__item">
+                    <h3 class="subtitle contacts__subtitle">По вопросам работы камер</h3>
+                    <ul class="contacts__phones">
+                        <li><a class="contacts__link" href="tel:88005559516">8 800 555 9516</a></li>
+                        <li><a class="contacts__link" href="tel:+79104230336">7 910 423 0336</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
 </section>
 

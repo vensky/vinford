@@ -1,0 +1,136 @@
+.select {
+    position: relative;
+
+    &__field {
+        min-height: 60px;
+        background-color: $second-color;
+        border-radius: 14px;
+        border: 1px solid $third-color;
+        width: 100%;
+        display: block;
+        padding-top: 17px ;
+        padding-right: 38px;
+        padding-bottom: 17px;
+        padding-left: 20px;
+        line-height: 24px;
+
+        @media (min-width: $tablet) {
+            font-size: 15px;
+            padding-left: 30px;
+
+        }
+
+        @media (min-width: $desktop) {
+            min-height: 80px;
+            font-size: 18px;
+            padding-top: 26px;
+            padding-bottom: 26px;
+        }
+
+        &:focus {
+            box-shadow: white 0 0 0 2px, $third-color 0 0 0 4px;
+            outline: none;
+        }
+    }
+}
+
+.select-custom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+
+    @media (hover: hover) {
+        display: block;
+    }
+
+    &__trigger {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        white-space: nowrap;
+        overflow: hidden;
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            right: 18px;
+            width: 18px;
+            height: 11px;
+            background-image: url(../img/icon-arrow.svg);
+            background-repeat: no-repeat;
+            content: "";
+            transform: translateY(-50%);
+            z-index: 2;
+
+            @media (min-width: $tablet) {
+                right: 29px;
+            }
+        }
+
+        .select-custom--active & {
+
+            box-shadow: white 0 0 0 2px, $third-color 0 0 0 4px;
+            outline: none;
+
+            &::before {
+                transform: translateY(-50%) rotate(180deg);
+            }
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top:0;
+            right: 0;
+            width: 52px;
+            background-image: linear-gradient(to right, rgba($second-color, 0) 0, $second-color 30%);
+            z-index: 1;
+            height: 100px;
+
+            @media (min-width: $tablet) {
+                width: 70px;
+            }
+        }
+    }
+
+    &__options {
+        position: absolute;
+        z-index: 1;
+        top: 46px;
+        left: 0;
+        display: none;
+        width: 100%;
+/*        border-right: $field-border;
+        border-bottom: $field-border;
+        border-left: $field-border;*/
+        /*background-color: $second-color;*/
+        cursor: pointer;
+        text-transform: uppercase;
+
+        .select-custom--active & {
+            display: block;
+        }
+    }
+
+    &__option {
+        min-height: 24px;
+        padding: 5px 10px;
+
+        &:hover,
+        &--active {
+            background-color: $main-color;
+            color: $second-color;
+        }
+    }
+}
+
+.select-native:focus + .select-custom {
+
+    @media (hover: hover) {
+        display: none;
+    }
+}
+
