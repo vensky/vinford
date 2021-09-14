@@ -2,16 +2,27 @@
     @include no-list;
     display: flex;
     overflow: hidden;
+    width: 100%;
 
     > li:not(:last-child) {
         margin-right: 10px;
+
+        @media (min-width: $tablet) {
+            margin-right: 30px;
+            margin-bottom: 25px;
+        }
     }
 
     @media (min-width: $tablet) {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        max-height: 350px;
+        max-height: 385px;
+    }
+
+    @media (min-width: $desktop) {
+        min-height: 675px;
+        overflow: visible;
     }
 }
 
@@ -23,16 +34,32 @@
     width: 131px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    text-align: left;
-    padding: 20px;
+    padding: 20px 20px 10px;
     font-family: $font-serif;
+    transition: background-color 0.25s ease-out 0s;
+    text-align: left;
+    word-wrap: break-word;
+    hyphens: auto;
 
     @media (min-width: $tablet) {
+        font-size: 18px;
+        line-height: 20px;
         width: 219px;
         height: 160px;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 30px;
+        text-align: center;
     }
 
+    @media (min-width: $desktop) {
+        font-size: 20px;
+        line-height: 24px;
+        width: 295px;
+        height: 190px;
+    }
+
+    &:hover,
     &--active {
         background-color: #213067;
         color: $second-color;
@@ -44,14 +71,20 @@
 
     &__icon {
         fill: $main-color;
-        height: 26px;
+        transition: fill 0.25s ease-out 0s;
+        max-height: 26px;
+        max-width: 42px;
+        margin-bottom: 10px;
 
-        &--health {
-            width: 32px;
+        @media (min-width: $tablet) {
+            max-height: 50px;
+            max-width: 60px;
+            margin-bottom: 30px;
         }
 
-        &--video {
-            width: 42px;
+        @media (min-width: $desktop) {
+            height: 50px;
+            margin-bottom: 17px;
         }
     }
 }

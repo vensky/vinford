@@ -2,9 +2,9 @@
     background-color: #213067;
     color: $second-color;
     display: flex;
+    height: 100vh;
 
     @media (min-width: $tablet), (orientaion: portrait) {
-        height: 100vh;
         min-height: 625px;
     }
 

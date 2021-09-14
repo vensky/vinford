@@ -1,34 +1,64 @@
 .features {
+    @media (min-width: $tablet) {
+        background-image: linear-gradient(90deg, #fbfbfb 0%, #fbfbfb calc(50% - 98px), #fff calc(50% - 98px), #fff 100%);
+    }
+
+    @media (min-width: $desktop) {
+        background-image: linear-gradient(90deg, #fbfbfb 0%, #fbfbfb calc(50% - 289px), #fff calc(50% - 289px), #fff 100%);
+    }
 
     &__container {
         padding-top: 27px;
+        padding-bottom: 27px;
+
+        @media (max-width: 1023px) {
+            max-width: 414px;
+        }
 
         @media (min-width: $tablet) {
             padding-top: 0;
             height: 100%;
             display: flex;
+            padding-top: 108px;
         }
     }
 
     &__content {
-        @media (min-width: $tablet) {
-            padding-top: 27px;
-
-        height: 100%;
         max-width: 414px;
-        background-color: #fbfbfb;
-        padding-right: 83px;
-    }}
+
+        @media (min-width: $tablet) {
+            max-width: 300px;
+            margin-right: 84px;
+        }
+
+        @media (min-width: $desktop) {
+            max-width: 368px;
+            margin-right: 64px;
+        }
+    }
 
     &__title {
         margin-top: 34px;
         margin-bottom: 34px;
+
+        @media (min-width: $tablet) {
+            margin-top: 0;
+            margin-bottom: 40px;
+        }
+
+        @media (min-width: $desktop) {
+            margin-bottom: 100px;
+        }
     }
 
     &__img {
         border-radius: 20px;
         height: 161px;
         overflow: hidden;
+
+        @media (min-width: $desktop) {
+            height: 243px;
+        }
 
         img {
             height: 100%;
@@ -37,9 +67,21 @@
         }
     }
 
+    &__text {
+        margin-bottom: 20px;
+    }
+
     &__subtitle {
         margin-top: 21px;
         margin-bottom: 25px;
+
+        @media (min-width: $tablet) {
+            margin-bottom: 18px;
+        }
+
+        @media (min-width: $tablet) {
+            margin-top: 41px;
+        }
     }
 
     &__desc {
@@ -48,8 +90,12 @@
     }
 
     &__tabs {
-        margin-top: 20px;
-        padding-top: 47px;
+        @media (min-width: $tablet) {
+        margin-left: 30px;}
+
+
+            @media (min-width: $desktop) {
+        margin-left: 60px;}
     }
 
 }
