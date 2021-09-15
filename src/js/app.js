@@ -7,5 +7,6 @@
 @@include('./_components/_slider.js');
 @@include('./_components/_swiper.js');
 @@include('./_components/_tabs.js');
+@@include('./_components/_select.js');
 
 
