@@ -1,8 +1,7 @@
 .about {
-    background-color: #213067;
+    background-color: $main-color;
     color: $second-color;
     display: flex;
-/*    height: 100vh;*/
 
     @media (min-width: $tablet), (orientaion: portrait) {
         height: 100vh;
@@ -10,6 +9,7 @@
     }
 
     &__video {
+        background-color: $main-color;
         position: absolute;
         top: 20px;
         left: 50%;
