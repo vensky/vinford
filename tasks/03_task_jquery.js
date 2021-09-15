@@ -1,4 +1,4 @@
-// Напишите аналог кода на чистом js
+/*Напишите аналог кода на чистом js
 $(function() {
     $(".popup_open").on("click", function() {
         var data = "url=" + $("#url").val();
@@ -10,23 +10,30 @@ $(function() {
             success: function(data) {}
         });
     });
-});
+});*/
 
 (function() {
     const popupsOpen = document.querySelectorAll('.popup_open');
-    if (popupsOpen.length > 0) {
-        for(popup of popupsOpen){
-            popup.addEventListener('click', function() {
-                const urlEl = document.getElementById('url');
-                const data = 'url' + urlEl.value();
-                const form = urlEl;
-                const url = form.getAttribute('action');
 
-            if(url && data && form) {
-                fetch(url)
-                .then(data)
-            }
+    if (popupsOpen.length > 0) {
+        for (popup of popupsOpen) {
+            popup.addEventListener('click', function() {
+                const $input = document.getElementById('url');
+                const $form = $input.closest('.from');
+                const data = 'url=' + $input.value;
+                const url = $form.getAttribute('action');
+
+                if (url && data) {
+                    fetch(url, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    }).then(response => {})
+                    .catch(error => console.error(error))
+                }
             })
         }
     }
-})
+})();
