@@ -13,26 +13,11 @@
     }
 
     &:hover {
+
         &::before,
         &::after,
         span {
-            background-color: $main-color;
-        }
-    }
-
-    &.btn-nav--active {
-        &::before {
-            transform: rotate(45deg) translateY(6px);
-            width: 22.36px;
-        }
-
-        &::after {
-            transform: rotate(-45deg) translateY(-6px);
-            width: 22.36px;
-        }
-
-        span {
-            display: none;
+            background-color: $hover-color;
         }
     }
 
@@ -52,5 +37,21 @@
         width: 100%;
         background-color: $second-color;
         transition: background-color 0.25s ease-out 0s;
+    }
+
+    &--active {
+        &::before {
+            transform: rotate(45deg) translateY(6px);
+            width: 22.36px;
+        }
+
+        &::after {
+            transform: rotate(-45deg) translateY(-6px);
+            width: 22.36px;
+        }
+
+        span {
+            opacity: 0;
+        }
     }
 }
