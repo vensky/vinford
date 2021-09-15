@@ -9,24 +9,27 @@
         <h1 class="about__title">Vinford</h1>
         <p class="about__subtitle">Quality International School</p>
         <div class="slider about__slider">
-            <div class="slider__wrapper">
-                <div class="slider__slide">
-                    <p class="about__text">Cамая большая сеть Английских детских садов в России. Нам доверили воспитание своих деток более 5000 Пап и Мам.</p>
-                </div>
-                <div class="slider__slide">
+            <ul class="slider__list">
+                <li class="slider__item slider__item--active" data-slide="1">
+                    <p class="about__text">Cамая большая сеть Английских детских садов в&nbsp;России. Нам доверили воспитание своих деток более 5000 Пап и&nbsp;Мам</p>
+                </li>
+                <li class="slider__item" data-slide="2">
                     <p class="about__text">Педагоги English school</p>
-                </div>
-                <div class="slider__slide">
-                    <p class="about__text">Уже с трех лет наши малыши начинают интенсивно изучать Английский язык</p>
-                </div>
-            </div>
+                </li>
+                <li class="slider__item" data-slide="3">
+                    <p class="about__text">Уже с&nbsp;трех лет наши малыши начинают интенсивно изучать Английский язык</p>
+                </li>
+            </ul>
             <div class="more about__more">
-                <a class="more__link" href="#parents">Подробнее</a>
+                <a class="more__link" href="#features">Подробнее</a>
+                <svg class="more__img" width="350" height="168" viewBox="0 0 350 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M348.656 68.0425C158.656 153.543 -40.8439 148.543 8.65607 75.4143C73.9424 -21.0358 396.716 -22.0179 306.656 62.5424C241.156 124.043 125.656 158.542 65.1562 166.542" />
+                </svg>
             </div>
             <div class="slider__pagination about__pagination">
-                <button class="slider__bullet slider__bullet--active" type="button">К первому слайду</button>
-                <button class="slider__bullet" type="button">Ко второму слайду</button>
-                <button class="slider__bullet" type="button">К третьему слайду</button>
+                <button class="slider__bullet slider__bullet--active" type="button" data-slide-number="1">К первому слайду</button>
+                <button class="slider__bullet" type="button" data-slide-number="2">Ко второму слайду</button>
+                <button class="slider__bullet" type="button" data-slide-number="3">К третьему слайду</button>
             </div>
         </div>
     </div>

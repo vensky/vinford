@@ -2,6 +2,7 @@
     background-color: #213067;
     color: $second-color;
     display: flex;
+/*    height: 100vh;*/
 
     @media (min-width: $tablet), (orientaion: portrait) {
         height: 100vh;
@@ -93,6 +94,9 @@
 
         @media (min-width: $max) {
             font-size: 112px;
+        }
+
+        @media (min-width: $desktop) {
             line-height: 1;
         }
     }
@@ -110,11 +114,11 @@
     }
 
     &__slider {
-        position: relative;
         margin-top: 18px;
 
         @media (min-width: $max) {
             margin-top: 54px;
+            position: relative;
         }
     }
 
@@ -135,6 +139,10 @@
         @media (min-width: $max) {
             margin-top: 40px;
         }
+
+        @media (min-width: $desktop) {
+            margin-top: 56px;
+        }
     }
 
     &__more {
@@ -143,8 +151,13 @@
 
         @media (min-width: $max) {
             position: absolute;
-            right: 0;
-            top: -80px;
+            right: 0px;
+            top: -87px;
+        }
+
+        @media (min-width: $desktop) {
+            right: 14px;
+            top: -66px;
         }
     }
 }

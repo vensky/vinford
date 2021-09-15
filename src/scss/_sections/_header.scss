@@ -32,6 +32,14 @@
             stroke: $main-color;
         }
 
+        .btn-nav {
+            &::before,
+            &::after,
+            span {
+                background-color: $main-color;
+            }
+        }
+
     }
 
     &__container {

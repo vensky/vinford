@@ -1,17 +1,62 @@
 .more {
     width: 201px;
     height: 96px;
-    display: flex;
+    position: relative;
+    padding-top: 31px;
+    padding-left: 47px;
 
     @media (min-width: $tablet) {
         width: 330px;
         height: 157px;
         font-size: 18px;
+        padding-top: 46px;
+        padding-left: 104px;
+    }
+
+    @media (min-width: $desktop) {
+        width: 347px;
+        height: 165px;
+        padding-top: 47px;
+        padding-left: 113px;
     }
 
     &__link {
-        margin: auto;
+        position: relative;
+        z-index: 2;
         text-decoration: none;
         text-transform: uppercase;
     }
+
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        stroke: $second-color;
+        stroke-width: 2px;
+        z-index: 1;
+        stroke-dasharray: 1500;
+        stroke-dashoffset: -1500;
+
+        @media (max-width: 1023px) {
+            animation: draw 1500ms forwards;
+        }
+
+    }
+
+    &:hover {
+        .more__img {
+            animation: draw 1500ms forwards;
+        }
+    }
+}
+
+
+@keyframes draw {
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+
 }

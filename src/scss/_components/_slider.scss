@@ -1,31 +1,60 @@
 .slider {
-    &__wrapper {
-        display: flex;
-        flex-shrink: 0;
+    &__list {
+        @include no-list;
+        position: relative;
+        touch-action: none;
+        height: 80px;
         overflow: hidden;
-    }
-
-    &__slide {
-        flex-shrink: 0;
-        width: 100%;
+        word-wrap: break-word;
+        hyphens: auto;
 
         @media (min-width: $tablet) {
-            min-height: 160px;
+            height: 160px;
         }
 
         @media (min-width: $desktop) {
-            min-height: 200px;
+            height: 200px;
         }
+    }
+
+    &__item {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.25s ease;
+
+        &--active {
+            z-index: 2;
+            opacity: 1;
+        }
+
+
+    }
+
+    &__pagination {
+        line-height: 0;
     }
 
     &__bullet {
         @include no-btn;
         font-size: 0;
         width: 60px;
-        height: 4px;
-        background-color: $second-color;
+        height: 16px;
+        padding-top: 6px;
+        padding-bottom: 6px;
         opacity: 0.2;
-        border-radius: 2px;
+
+       &::before {
+            content: "";
+            background-color: $second-color;
+            height: 4px;
+            display: block;
+            border-radius: 2px;
+       }
 
         @media (min-width: $tablet) {
             width: 92px;
