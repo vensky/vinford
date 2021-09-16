@@ -1,12 +1,14 @@
 .slider {
     &__list {
+
         @include no-list;
+
         position: relative;
-        touch-action: none;
-        height: 80px;
         overflow: hidden;
-        word-wrap: break-word;
+        height: 80px;
         hyphens: auto;
+        touch-action: none;
+        word-wrap: break-word;
 
         @media (min-width: $tablet) {
             height: 160px;
@@ -31,8 +33,6 @@
             z-index: 2;
             opacity: 1;
         }
-
-
     }
 
     &__pagination {
@@ -40,21 +40,23 @@
     }
 
     &__bullet {
+
         @include no-btn;
-        font-size: 0;
+
         width: 60px;
         height: 16px;
         padding-top: 6px;
         padding-bottom: 6px;
+        font-size: 0;
         opacity: 0.2;
 
-       &::before {
-            content: "";
-            background-color: $second-color;
-            height: 4px;
+        &::before {
             display: block;
+            height: 4px;
+            background-color: $second-color;
             border-radius: 2px;
-       }
+            content: "";
+        }
 
         @media (min-width: $tablet) {
             width: 92px;

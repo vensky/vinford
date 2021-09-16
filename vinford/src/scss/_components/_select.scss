@@ -2,29 +2,28 @@
     position: relative;
 
     &__field {
-        min-height: 60px;
-        background-color: $second-color;
-        border-radius: 14px;
-        border: 1px solid $third-color;
-        width: 100%;
         display: block;
+        width: 100%;
+        min-height: 60px;
         padding-top: 17px;
         padding-right: 38px;
         padding-bottom: 17px;
         padding-left: 20px;
+        border: 1px solid $third-color;
+        background-color: $second-color;
+        border-radius: 14px;
         line-height: 24px;
 
         @media (min-width: $tablet) {
-            font-size: 15px;
             padding-left: 30px;
-
+            font-size: 15px;
         }
 
         @media (min-width: $desktop) {
             min-height: 80px;
-            font-size: 18px;
             padding-top: 26px;
             padding-bottom: 26px;
+            font-size: 18px;
         }
 
         &:focus {
@@ -47,24 +46,25 @@
 
     &__trigger {
         position: relative;
+        overflow: hidden;
         width: 100%;
         height: 100%;
         cursor: pointer;
         white-space: nowrap;
-        overflow: hidden;
 
         &::before {
             position: absolute;
+            z-index: 2;
             top: 50%;
             right: 18px;
             width: 18px;
             height: 11px;
-           /* background-image: url("data:image/svg+xml;utf8,<svg width='18' height='11' viewBox='0 0 18 11' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 1L9 9L17 1' stroke='#6380E8' stroke-width='2' stroke-linecap='round'/></svg>");*/
+
+            /* background-image: url("data:image/svg+xml;utf8,<svg width='18' height='11' viewBox='0 0 18 11' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 1L9 9L17 1' stroke='#6380E8' stroke-width='2' stroke-linecap='round'/></svg>"); */
             background-image: url(../img/icon-arrow.svg);
             background-repeat: no-repeat;
             content: "";
             transform: translateY(-50%);
-            z-index: 2;
 
             @media (min-width: $tablet) {
                 right: 29px;
@@ -72,7 +72,6 @@
         }
 
         .select-custom--active & {
-
             box-shadow: white 0 0 0 2px, $third-color 0 0 0 4px;
             outline: none;
 
@@ -82,14 +81,14 @@
         }
 
         &::after {
-            content: "";
             position: absolute;
+            z-index: 1;
             top: 0;
             right: 0;
             width: 52px;
-            background-image: linear-gradient(to right, rgba($second-color, 0) 0, $second-color 30%);
-            z-index: 1;
             height: 100%;
+            background-image: linear-gradient(to right, rgba($second-color, 0) 0, $second-color 30%);
+            content: "";
 
             @media (min-width: $tablet) {
                 width: 70px;
@@ -98,19 +97,22 @@
     }
 
     &__options {
+
         @include no-list;
+
         position: absolute;
         z-index: 1;
         top: 46px;
         left: 0;
         display: none;
         width: 100%;
+        padding-left: 20px;
         border-right: 1px solid $third-color;
         border-bottom: 1px solid $third-color;
         border-left: 1px solid $third-color;
+        background-color: $second-color;
         border-bottom-left-radius: 14px;
         border-bottom-right-radius: 14px;
-        background-color: $second-color;
         cursor: pointer;
 
         .select-custom--active & {
@@ -130,7 +132,7 @@
     }
 }
 
-.select-native:focus+.select-custom {
+.select-native:focus + .select-custom {
 
     @media (hover: hover) {
         display: none;

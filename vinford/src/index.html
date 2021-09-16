@@ -151,9 +151,9 @@
         <main class="main">
             <section class="section about" id="about">
     <div class="about__video">
-        <video autoplay loop muted playsinline preload="auto" poster="/img/about.jpg">
-            <!-- <source src="img/about.av1.mp4" type="video/mp4; codecs=av01.0.05M.08">
-            <source src="img/about/animation.h264.mp4" type="video/mp4"> -->
+        <video autoplay muted playsinline preload="auto" poster="/img/about.jpg">
+            <source src="img/about.av1.mp4" type="video/mp4; codecs=av01.0.05M.08">
+            <source src="img/about.h264.mp4" type="video/mp4">
         </video>
     </div>
     <div class="container about__container">
@@ -191,7 +191,10 @@
         <div class="features__content">
             <h2 class="title features__title">Наши<br>преимущества</h2>
             <div class="features__img">
-                <img class="featute__img-source"src="img/feature-health.jpg" alt="Здоровье детей">
+                <picture>
+                    <source srcset="img/feature-health.webp" type="image/webp">
+                    <img src="img/feature-health.jpg" alt="Здоровье детей">
+                </picture>
             </div>
             <div class="features__text">
                 <h3 class="subtitle features__subtitle">Здоровье детей</h3>
@@ -201,7 +204,7 @@
         <div class="swiper swiper--endGradient swiper--endGradient">
             <ul class="tabs features__tabs swiper-wrapper">
                 <li class="swiper-slide">
-                    <button class="tab tab--active" type="button" data-feature-img="feature-health.jpg" data-feature-desc="Следим за самочувствием ребенка во время нахождения в детском саду, регулярно проводим спортивные занятия с детьми">
+                    <button class="tab tab--active" type="button" data-feature-img="feature-health" data-feature-desc="Следим за самочувствием ребенка во время нахождения в детском саду, регулярно проводим спортивные занятия с детьми">
                         <svg class="tab__icon tab__icon--health">
                             <use xlink:href="#icon-health"></use>
                         </svg>
@@ -209,7 +212,7 @@
                     </button>
                 </li>
                 <li class="swiper-slide">
-                    <button class="tab" type="button" data-feature-img="about.jpg" data-feature-desc="Ведем видеонаблюдение">
+                    <button class="tab" type="button" data-feature-img="about" data-feature-desc="Ведем видеонаблюдение">
                         <svg class="tab__icon tab__icon--video">
                             <use xlink:href="#icon-video"></use>
                         </svg>
@@ -217,7 +220,7 @@
                     </button>
                 </li>
                 <li class="swiper-slide">
-                    <button class="tab" type="button" data-feature-img="feature-health.jpg" data-feature-desc="Следим за самочувствием ребенка во время нахождения в детском саду, регулярно проводим спортивные занятия с детьми">
+                    <button class="tab" type="button" data-feature-img="feature-health" data-feature-desc="Следим за самочувствием ребенка во время нахождения в детском саду, регулярно проводим спортивные занятия с детьми">
                         <svg class="tab__icon tab__icon--language">
                             <use xlink:href="#icon-language"></use>
                         </svg>
@@ -225,7 +228,7 @@
                     </button>
                 </li>
                 <li class="swiper-slide">
-                    <button class="tab" type="button" data-feature-img="feature-health.jpg" data-feature-desc="Следим за самочувствием ребенка во время нахождения в детском саду, регулярно проводим спортивные занятия с детьми">
+                    <button class="tab" type="button" data-feature-img="feature-health" data-feature-desc="Следим за самочувствием ребенка во время нахождения в детском саду, регулярно проводим спортивные занятия с детьми">
                         <svg class="tab__icon tab__icon--food">
                             <use xlink:href="#icon-food"></use>
                         </svg>
@@ -233,7 +236,7 @@
                     </button>
                 </li>
                 <li class="swiper-slide">
-                    <button class="tab" type="button" data-feature-img="feature-health.jpg" data-feature-desc="Следим за самочувствием ребенка во время нахождения в детском саду, регулярно проводим спортивные занятия с детьми">
+                    <button class="tab" type="button" data-feature-img="feature-health" data-feature-desc="Следим за самочувствием ребенка во время нахождения в детском саду, регулярно проводим спортивные занятия с детьми">
                         <svg class="tab__icon tab__icon--education">
                             <use xlink:href="#icon-education"></use>
                         </svg>
@@ -241,7 +244,7 @@
                     </button>
                 </li>
                 <li class="swiper-slide">
-                    <button class="tab" type="button" data-feature-img="feature-health.jpg" data-feature-desc="Следим за самочувствием ребенка во время нахождения в детском саду, регулярно проводим спортивные занятия с детьми">
+                    <button class="tab" type="button" data-feature-img="feature-health" data-feature-desc="Следим за самочувствием ребенка во время нахождения в детском саду, регулярно проводим спортивные занятия с детьми">
                         <svg class="tab__icon tab__icon--adaptation">
                             <use xlink:href="#icon-adaptation"></use>
                         </svg>
@@ -249,7 +252,7 @@
                     </button>
                 </li>
                 <li class="swiper-slide">
-                    <button class="tab" type="button" data-feature-img="feature-health.jpg" data-feature-desc="Следим за самочувствием ребенка во время нахождения в детском саду, регулярно проводим спортивные занятия с детьми">
+                    <button class="tab" type="button" data-feature-img="feature-health" data-feature-desc="Следим за самочувствием ребенка во время нахождения в детском саду, регулярно проводим спортивные занятия с детьми">
                         <svg class="tab__icon tab__icon--security">
                             <use xlink:href="#icon-security"></use>
                         </svg>
@@ -257,7 +260,7 @@
                     </button>
                 </li>
                 <li class="swiper-slide">
-                    <button class="tab" type="button" data-feature-img="feature-health.jpg" data-feature-desc="Следим за самочувствием ребенка во время нахождения в детском саду, регулярно проводим спортивные занятия с детьми">
+                    <button class="tab" type="button" data-feature-img="feature-health" data-feature-desc="Следим за самочувствием ребенка во время нахождения в детском саду, регулярно проводим спортивные занятия с детьми">
                         <svg class="tab__icon tab__icon--teacher">
                             <use xlink:href="#icon-teacher"></use>
                         </svg>
@@ -265,7 +268,7 @@
                     </button>
                 </li>
                 <li class="swiper-slide">
-                    <button class="tab" type="button" data-feature-img="feature-health.jpg" data-feature-desc="Следим за самочувствием ребенка во время нахождения в детском саду, регулярно проводим спортивные занятия с детьми">
+                    <button class="tab" type="button" data-feature-img="feature-health" data-feature-desc="Следим за самочувствием ребенка во время нахождения в детском саду, регулярно проводим спортивные занятия с детьми">
                         <svg class="tab__icon tab__icon--walk">
                             <use xlink:href="#icon-walk"></use>
                         </svg>
@@ -280,37 +283,33 @@
             <section class="section contacts" id="contacts">
     <div class="map contacts__map" id="googlemaps">
     </div>
-    <div class="container contacts__container hidden">
+    <div class="container contacts__container">
         <form class="contacts__form" method="" action="">
             <!-- fieldset.field.select.task-form__group#selectTask
                     span.field__label.select__label(id="service") Выбирите услугу -->
             <div class="select contacts__select">
-                <select name="" id="" class="select__field select-native" name="service" aria-labelledby="service">
-                    <option value="#000" selected>Все садики на карте</option>
-                    <option value="#001" selected>Главный корпус, ул. Новый Арбат, 23</option>
-                    <option value="#002" selected>Главный корпус, ул. Новый Арбат, 23</option>
-                    <option value="#003" selected>Главный корпус, ул. Новый Арбат, 23</option>
-                    <option value="#004" selected>Главный корпус, ул. Новый Арбат, 23</option>
-                    <option value="#005" selected>Главный корпус, ул. Новый Арбат, 23</option>
-                    <option value="#006" selected>Главный корпус, ул. Новый Арбат, 23</option>
+                <select name="" id="" class="select__field select-native" aria-labelledby="service">
+                    <option value="0" selected>Все садики на карте</option>
+                    <option value="1">г. Москва, Смоленский бульвар, 22</option>
+                    <option value="2">г. Москва, Ленинский проспект, 9</option>
+                    <option value="3">г. Москва, Майский проспект, 29</option>
+                    <option value="4">г. Москва, пл. Восстания, 2</option>
                 </select>
                 <div class="select-custom" aria-hidden="true">
-                    <div class="select__field select-custom__trigger">Все садики на карте Все садики на картеВсе садики на карте</div>
+                    <div class="select__field select-custom__trigger">Все садики на карте</div>
                     <ul class="select-custom__options">
-                        <li class="select-custom__option" data-value="#000">Все садики на карте</li>
-                        <li class="select-custom__option"data-value="#001">Главный корпус, ул. Новый Арбат, 23</li>
-                        <li class="select-custom__option"data-value="#002">Все садики на карте</li>
-                        <li class="select-custom__option"data-value="#003">Все садики на карте</li>
-                        <li class="select-custom__option"data-value="#004">Все садики на карте</li>
-                        <li class="select-custom__option"data-value="#005">Все садики на карте</li>
-                        <li class="select-custom__option"data-value="#006">Все садики на карте</li>
+                        <li class="select-custom__option select-custom--active" data-value="0">Все садики на карте</li>
+                        <li class="select-custom__option" data-value="1">г. Москва, Смоленский бульвар, 22</li>
+                        <li class="select-custom__option" data-value="2">г. Москва, Ленинский проспект, 9</li>
+                        <li class="select-custom__option" data-value="3">г. Москва, Майский проспект, 29</li>
+                        <li class="select-custom__option" data-value="4">г. Москва, пл. Восстания, 2</li>
                     </ul>
                 </div>
             </div>
         </form>
         <div class="contacts__tile">
             <h2 class="title contacts__title">Контакты</h2>
-            <ul class="contacts__list">
+            <ul class="contacts__list contacts__list--all">
                 <li class="contacts__item">
                     <h3 class="subtitle contacts__subtitle">Колл-центр</h3>
                     <ul class="contacts__phones">
@@ -327,6 +326,15 @@
                 </li>
                 <li class="contacts__item">
                     <h3 class="subtitle contacts__subtitle">По вопросам работы камер</h3>
+                    <ul class="contacts__phones">
+                        <li><a class="contacts__link" href="tel:88005559516">8 800 555 9516</a></li>
+                        <li><a class="contacts__link" href="tel:+79104230336">7 910 423 0336</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="contacts__list contacts__list--single contacts__list--hidden">
+                <li class="contacts__item">
+                    <h3 class="subtitle contacts__subtitle">Колл-центр</h3>
                     <ul class="contacts__phones">
                         <li><a class="contacts__link" href="tel:88005559516">8 800 555 9516</a></li>
                         <li><a class="contacts__link" href="tel:+79104230336">7 910 423 0336</a></li>

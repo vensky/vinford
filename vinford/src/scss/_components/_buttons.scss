@@ -1,19 +1,20 @@
 .btn-nav {
+
     @include no-btn;
+
+    z-index: 12;
+    display: flex;
     width: 20px;
     height: 10px;
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
     font-size: 0;
-    z-index: 12;
 
     @media (min-width: $tablet) {
         display: none;
     }
 
     &:hover {
-
         &::before,
         &::after,
         span {
@@ -23,31 +24,31 @@
 
     &::before,
     &::after {
-        content: "";
         display: block;
         width: 100%;
         height: 2px;
         background-color: $second-color;
+        content: "";
         transition: background-color 0.25s ease-out 0s;
     }
 
     span {
         display: block;
-        height: 2px;
         width: 100%;
+        height: 2px;
         background-color: $second-color;
         transition: background-color 0.25s ease-out 0s;
     }
 
     &--active {
         &::before {
-            transform: rotate(45deg) translateY(6px);
             width: 22.36px;
+            transform: rotate(45deg) translateY(6px);
         }
 
         &::after {
-            transform: rotate(-45deg) translateY(-6px);
             width: 22.36px;
+            transform: rotate(-45deg) translateY(-6px);
         }
 
         span {

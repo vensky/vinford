@@ -1,8 +1,7 @@
 var preschools = [{
-        "id": "1",
-        "title": "Детский сад Vinford",
-        "city": "г. Москва",
-        "address": "ул. Воздвиженка, 8",
+        "id": "0",
+        "title": "Все садики на карте",
+        "address": "Все садики на карте",
         "tel": "8 800 55 9516",
         "latlng": {
             "lat": 55.7515,
@@ -12,8 +11,7 @@ var preschools = [{
     {
         "id": "1",
         "title": "Детский сад Vinford",
-        "city": "г. Москва",
-        "address": "Смоленский бульвар, 22",
+        "address": "г. Москва, Смоленский бульвар, 22",
         "tel": "8 800 55 9516",
         "latlng": {
             "lat": 55.7577,
@@ -23,8 +21,7 @@ var preschools = [{
     {
         "id": "2",
         "title": "Детский сад Vinford",
-        "city": "г. Москва",
-        "address": "Ленинский проспект, 9",
+        "address": "г. Москва, Ленинский проспект, 9",
         "tel": "8 800 55 9516",
         "latlng": {
             "lat": 55.7625,
@@ -34,8 +31,7 @@ var preschools = [{
     {
         "id": "3",
         "title": "Детский сад Vinford",
-        "city": "г. Москва",
-        "address": "Майский проспект, 29",
+        "address": "г. Москва, Майский проспект, 29",
         "tel": "8 800 55 9516",
         "latlng": {
             "lat": 55.7502,
@@ -45,8 +41,7 @@ var preschools = [{
     {
         "id": "4",
         "title": "Детский сад Vinford",
-        "city": "г. Москва",
-        "address": "пл. Восстания, 2",
+        "address": "г. Москва, пл. Восстания, 2",
         "tel": "8 800 55 9516",
         "latlng": {
             "lat": 55.7366,
@@ -54,6 +49,9 @@ var preschools = [{
         }
     }
 ];
+
+var currentContacts = '0';
+var markersArr = [];
 
 var apiKey = 'AIzaSyDrHToX9u5kf_XnbgIEioQkQIYMT-yYiDY';
 var map;
@@ -96,22 +94,30 @@ function initialize() {
         var marker = new google.maps.Marker({
             position: preschools[i].latlng,
             map: map,
-            icon: icon
+            icon: icon,
+            id: i
         });
 
-        google.maps.event.addListener(marker, 'click', (function(marker, i) {
-            return function() {
-                for (var j = 0; j < markers.length; j++) {
-                    markers[j].setIcon(icon);
-                }
-                this.setIcon(iconActive)
+        google.maps.event.addListener(marker, 'click', (function() {
+            for (var j = 0; j < markers.length; j++) {
+                // markers[j].setIcon(icon);
+                markers[j].setVisible(false);
             }
-        })(marker, i));
+                this.setIcon(iconActive);
+                this.setVisible(true);
+                currentContacts = marker.id;
+            })
+        );
 
         markers.push(marker);
     }
 
-
+    markersArr = markers;
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
+
+
+
+
+

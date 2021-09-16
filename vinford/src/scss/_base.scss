@@ -1,12 +1,12 @@
 body {
     min-width: 320px;
-    background-color: #fff;
-    color: $main-color;
-    font-size: 14px;
-    line-height: 1.4;
-    font-family: $font-sans-serif;
     height: 100vh;
     min-height: 100vh;
+    background-color: #fff;
+    color: $main-color;
+    font-family: $font-sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
 
     @media (min-width: $tablet) {
         font-size: 15px;
@@ -19,17 +19,16 @@ body {
     &.no-scroll {
         overflow: hidden;
     }
-
 }
 
 .container {
-    margin: 0 auto;
-    padding: 0 20px;
     width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
 
     @media (min-width: $tablet) {
-        padding: 0 30px;
         max-width: 1024px;
+        padding: 0 30px;
     }
 
     @media (min-width: $desktop) {
@@ -37,10 +36,6 @@ body {
     }
 }
 
-.main {
-
-}
-
 .section {
-   min-height: 100vh;
+    min-height: 100vh;
 }

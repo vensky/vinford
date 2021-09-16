@@ -1,11 +1,13 @@
 .social {
+
     @include no-list;
+
     display: flex;
-    font-size: 0;
     width: 133px;
     height: 20px;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    font-size: 0;
 
     @media (min-width: $desktop) {
         width: 182px;
@@ -20,36 +22,33 @@
         transition: fill 0.25s ease-out 0s, stroke 0.25s ease-out 0s;
 
         &--vk {
-            fill: $second-color;
-            height: 12px;
             width: 22px;
+            height: 12px;
+            fill: $second-color;
 
             &:hover {
-                @media (min-width: $tablet) {
-                    fill: $hover-color;
-                }
+                fill: $hover-color;
             }
         }
 
         &--ok {
-            fill: $second-color;
-            height: 20px;
             width: 13px;
+            height: 20px;
+            fill: $second-color;
 
             &:hover {
-                @media (min-width: $tablet) {
-                    fill: $hover-color;
-                }
+                fill: $hover-color;
             }
         }
 
         &--ig {
-            fill: none;
-            stroke: $second-color;
             width: 18px;
             height: 18px;
+            fill: none;
+            stroke: $second-color;
 
             &:hover {
+
                 @media (min-width: $tablet) {
                     stroke: $hover-color;
                 }

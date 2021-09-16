@@ -1,5 +1,7 @@
 .phone {
+
     @include no-list;
+
     margin-bottom: 40px;
 
     @media (min-width: $tablet) {
@@ -19,6 +21,7 @@
         transition: color 0.25s ease-out 0s;
 
         &:hover {
+
             @media (min-width: $tablet) {
                 color: $hover-color;
             }

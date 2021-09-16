@@ -1,37 +1,33 @@
 <section class="section contacts" id="contacts">
     <div class="map contacts__map" id="googlemaps">
     </div>
-    <div class="container contacts__container hidden">
+    <div class="container contacts__container">
         <form class="contacts__form" method="" action="">
             <!-- fieldset.field.select.task-form__group#selectTask
                     span.field__label.select__label(id="service") Выбирите услугу -->
             <div class="select contacts__select">
-                <select name="" id="" class="select__field select-native" name="service" aria-labelledby="service">
-                    <option value="#000" selected>Все садики на карте</option>
-                    <option value="#001" selected>Главный корпус, ул. Новый Арбат, 23</option>
-                    <option value="#002" selected>Главный корпус, ул. Новый Арбат, 23</option>
-                    <option value="#003" selected>Главный корпус, ул. Новый Арбат, 23</option>
-                    <option value="#004" selected>Главный корпус, ул. Новый Арбат, 23</option>
-                    <option value="#005" selected>Главный корпус, ул. Новый Арбат, 23</option>
-                    <option value="#006" selected>Главный корпус, ул. Новый Арбат, 23</option>
+                <select name="" id="" class="select__field select-native" aria-labelledby="service">
+                    <option value="0" selected>Все садики на карте</option>
+                    <option value="1">г. Москва, Смоленский бульвар, 22</option>
+                    <option value="2">г. Москва, Ленинский проспект, 9</option>
+                    <option value="3">г. Москва, Майский проспект, 29</option>
+                    <option value="4">г. Москва, пл. Восстания, 2</option>
                 </select>
                 <div class="select-custom" aria-hidden="true">
-                    <div class="select__field select-custom__trigger">Все садики на карте Все садики на картеВсе садики на карте</div>
+                    <div class="select__field select-custom__trigger">Все садики на карте</div>
                     <ul class="select-custom__options">
-                        <li class="select-custom__option" data-value="#000">Все садики на карте</li>
-                        <li class="select-custom__option"data-value="#001">Главный корпус, ул. Новый Арбат, 23</li>
-                        <li class="select-custom__option"data-value="#002">Все садики на карте</li>
-                        <li class="select-custom__option"data-value="#003">Все садики на карте</li>
-                        <li class="select-custom__option"data-value="#004">Все садики на карте</li>
-                        <li class="select-custom__option"data-value="#005">Все садики на карте</li>
-                        <li class="select-custom__option"data-value="#006">Все садики на карте</li>
+                        <li class="select-custom__option select-custom--active" data-value="0">Все садики на карте</li>
+                        <li class="select-custom__option" data-value="1">г. Москва, Смоленский бульвар, 22</li>
+                        <li class="select-custom__option" data-value="2">г. Москва, Ленинский проспект, 9</li>
+                        <li class="select-custom__option" data-value="3">г. Москва, Майский проспект, 29</li>
+                        <li class="select-custom__option" data-value="4">г. Москва, пл. Восстания, 2</li>
                     </ul>
                 </div>
             </div>
         </form>
         <div class="contacts__tile">
             <h2 class="title contacts__title">Контакты</h2>
-            <ul class="contacts__list">
+            <ul class="contacts__list contacts__list--all">
                 <li class="contacts__item">
                     <h3 class="subtitle contacts__subtitle">Колл-центр</h3>
                     <ul class="contacts__phones">
@@ -48,6 +44,15 @@
                 </li>
                 <li class="contacts__item">
                     <h3 class="subtitle contacts__subtitle">По вопросам работы камер</h3>
+                    <ul class="contacts__phones">
+                        <li><a class="contacts__link" href="tel:88005559516">8 800 555 9516</a></li>
+                        <li><a class="contacts__link" href="tel:+79104230336">7 910 423 0336</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="contacts__list contacts__list--single contacts__list--hidden">
+                <li class="contacts__item">
+                    <h3 class="subtitle contacts__subtitle">Колл-центр</h3>
                     <ul class="contacts__phones">
                         <li><a class="contacts__link" href="tel:88005559516">8 800 555 9516</a></li>
                         <li><a class="contacts__link" href="tel:+79104230336">7 910 423 0336</a></li>

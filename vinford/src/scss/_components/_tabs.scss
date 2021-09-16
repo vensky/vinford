@@ -1,16 +1,19 @@
 .tabs {
+
     @include no-list;
 
     >li:not(:first-child) {
+
         @media (max-width: 1023px) {
             margin-left: 10px;
         }
     }
 
     >li {
+
         @media (min-width: $tablet) {
-            margin-left: 30px;
             margin-bottom: 25px;
+            margin-left: 30px;
         }
 
         @media (min-width: $desktop) {
@@ -28,42 +31,44 @@
 
     @media (min-width: $desktop) {
         display: flex;
-        flex-wrap: wrap;
         flex-direction: column;
+        flex-wrap: wrap;
     }
 }
 
 .tab {
+
     @include no-btn;
-    background-color: transparent;
-    border-radius: 16px;
-    height: 96px;
-    width: 131px;
+
     display: flex;
+    width: 131px;
+    height: 96px;
     flex-direction: column;
     padding: 20px 20px 10px;
+    background-color: transparent;
+    border-radius: 16px;
     font-family: $font-serif;
-    transition: background-color 0.25s ease-out 0s;
-    text-align: left;
-    word-wrap: break-word;
     hyphens: auto;
+    text-align: left;
+    transition: background-color 0.25s ease-out 0s;
+    word-wrap: break-word;
 
     @media (min-width: $tablet) {
-        font-size: 18px;
-        line-height: 20px;
         width: 219px;
         height: 160px;
         align-items: center;
         justify-content: center;
         padding: 10px 30px;
+        font-size: 18px;
+        line-height: 20px;
         text-align: center;
     }
 
     @media (min-width: $desktop) {
-        font-size: 20px;
-        line-height: 24px;
         width: 295px;
         height: 190px;
+        font-size: 20px;
+        line-height: 24px;
     }
 
     &:hover,
@@ -77,15 +82,15 @@
     }
 
     &__icon {
+        max-width: 42px;
+        max-height: 26px;
+        margin-bottom: 10px;
         fill: $main-color;
         transition: fill 0.25s ease-out 0s;
-        max-height: 26px;
-        max-width: 42px;
-        margin-bottom: 10px;
 
         @media (min-width: $tablet) {
-            max-height: 50px;
             max-width: 60px;
+            max-height: 50px;
             margin-bottom: 30px;
         }
 

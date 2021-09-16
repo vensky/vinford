@@ -2,24 +2,25 @@
     position: relative;
 
     &__map {
-        background: url(../img/map.png) no-repeat 50% 50%/cover;
-        height: 100%;
-        width: 100%;
-        top: 0;
-        left: 0;
         position: absolute;
         z-index: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url(../img/map.png) no-repeat 50% 50%/cover;
     }
 
     &__container {
-        padding-top: 60px;
-        padding-bottom: 178px;
         position: relative;
         z-index: 1;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
+        padding-top: 60px;
+        padding-bottom: 178px;
+        pointer-events: none;
 
         @media (min-width: $tablet) {
             flex-direction: row;
@@ -31,12 +32,12 @@
         @media (min-width: $desktop) {
             padding-top: 200px;
         }
-
     }
 
     &__form {
-        max-width: 458px;
         width: 100%;
+        max-width: 458px;
+        pointer-events: auto;
 
         @media (min-width: $tablet) {
             max-width: 946px;
@@ -44,36 +45,37 @@
         }
     }
 
-    &__select {
-
-    }
-
     &__tile {
-        margin-top: 262px;
         width: 100%;
-        border-radius: 14px;
-        background-color: $second-color;
-        padding: 30px;
         max-width: 458px;
+        padding: 30px;
+        margin-top: 262px;
+        background-color: $second-color;
+        border-radius: 14px;
+        pointer-events: auto;
 
         @media (min-width: $tablet) {
-            margin-top: 0;
             width: 300px;
             flex-shrink: 0;
             padding-top: 40px;
+            margin-top: 0;
         }
 
         @media (min-width: $desktop) {
             width: 458px;
             padding-top: 60px;
-            padding-left: 64px;
-            padding-left: 64px;
             padding-bottom: 60px;
+            padding-left: 64px;
         }
     }
 
     &__list {
+
         @include no-list;
+
+        &--hidden {
+            display: none;
+        }
     }
 
     &__item:not(:last-child) {
@@ -97,8 +99,8 @@
     }
 
     &__subtitle {
-        color: #9a9a9a;
         margin-bottom: 6px;
+        color: #9a9a9a;
         font-size: 14px;
         line-height: 20px;
 
@@ -108,7 +110,9 @@
     }
 
     &__phones {
+
         @include no-list;
+
         font-size: 15px;
 
         > li:not(:last-child) {

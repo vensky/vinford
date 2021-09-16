@@ -7,8 +7,8 @@
     color: $second-color;
 
     @media (min-width: $max) {
-        background: none;
         padding: 23px 0;
+        background: none;
     }
 
     @media (min-width: $desktop) {
@@ -16,7 +16,7 @@
     }
 
     &--scroll {
-        background: linear-gradient(180deg, $second-color 0%, $second-color 25%, rgba($second-color, 0) 100%);
+        background: linear-gradient(180deg, $second-color 0%, $second-color 15%, rgba($second-color, 0.2) 100%);
         color: $main-color;
 
         .header__logo {
@@ -26,13 +26,22 @@
         .social__icon--vk,
         .social__icon--ok {
             fill: $main-color;
+
+            &:hover {
+                fill: $hover-color;
+            }
         }
 
         .social__icon--ig {
             stroke: $main-color;
+
+            &:hover {
+                stroke: $hover-color;
+            }
         }
 
         .btn-nav {
+
             &::before,
             &::after,
             span {
@@ -40,6 +49,14 @@
             }
         }
 
+        .btn-nav--active {
+
+            &::before,
+            &::after,
+            span {
+                background-color: $second-color;
+            }
+        }
     }
 
     &__container {
@@ -50,19 +67,20 @@
 
     &__logo {
         display: block;
+        width: 38.75%;
         min-width: 124px;
         max-width: 184px;
-        width: 38.75%;
         fill: $second-color;
         transition: fill 0.25s ease-in 0s;
     }
 
     &__nav {
-        @media(min-width: $tablet) {
+
+        @media (min-width: $tablet) {
             margin-left: 66px;
         }
 
-        @media(min-width: $desktop) {
+        @media (min-width: $desktop) {
             margin-left: 120px;
         }
     }
@@ -70,12 +88,12 @@
     &__social {
         margin-bottom: 40px;
 
-        @media(min-width: $tablet) {
+        @media (min-width: $tablet) {
             margin-bottom: 0;
             margin-left: 134px;
         }
 
-        @media(min-width: $desktop) {
+        @media (min-width: $desktop) {
             margin-left: 152px;
         }
     }
