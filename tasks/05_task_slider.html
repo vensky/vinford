@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .field {
+            position: relative;
+            width: 300px;
+        }
+
+        .field__input {
+            height: 60px;
+            width: 310px;
+            border: 2px solid #c1c1c1;
+            border-radius: 8px;
+            text-align: center;
+            padding: 0 18px;
+            font-size: 28px;
+        }
+
+        .slider {
+            background-color: #c1c1c1;
+            width: 100%;
+            height: 2px;
+            position: absolute;
+            bottom: 0;
+            left: 8px;
+        }
+
+        .slider__bar {
+            display: block;
+            height: 100%;
+            width: 50%;
+            background-color: #e78f3e;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .slider__thumb {
+            box-sizing: border-box;
+            display: block;
+            width: 24px;
+            height: 24px;
+            background-color: #e78f3e;
+            border-radius: 50%;
+            position: relative;
+            left: 10px;
+            top: -10px;
+            border: 4px solid #fff;
+            box-shadow: 0 0 5px 0 rgba(50, 50, 50, 0.75);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="field">
+        <input class="field__input" type="text" value="10000">
+        <div class="slider">
+            <span class="slider__bar"></span>
+            <span class="slider__thumb"></span>
+        </div>
+    </div>
+    <script>
+        const initSlider = (min, max, current) => {
+            const $slider = document.querySelector('.slider');
+            const $thumb = $slider.querySelector('.slider__thumb');
+            const $bar = $slider.querySelector('.slider__bar');
+
+            $thumb.onmousedown = function (event) {
+                let shiftX = event.clientX - $thumb.getBoundingClientRect().left;
+
+                document.addEventListener('mousemove', onMouseMove);
+                document.addEventListener('mouseup', onMouseUp);
+
+                function onMouseMove(event) {
+                    let newLeft = event.clientX - shiftX - $slider.getBoundingClientRect().left;
+
+                    // курсор вышел из слайдера => оставить бегунок в его границах.
+                    if (newLeft < 0) {
+                      newLeft = 0;
+                    }
+
+                    let rightEdge = $slider.offsetWidth - $thumb.offsetWidth;
+
+                    if (newLeft > rightEdge) {
+                      newLeft = rightEdge;
+                    }
+
+                    $thumb.style.left = newLeft + "px";
+                }
+
+                function onMouseUp() {
+                    document.removeEventListener('mouseup', onMouseUp);
+                    document.removeEventListener('mousemove', onMouseMove);
+                }
+            }
+        }
+        initSlider(0, 100000, 10000);
+
+    </script>
+</body>
+
+</html>
