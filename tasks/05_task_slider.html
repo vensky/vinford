@@ -9,11 +9,14 @@
         .field {
             position: relative;
             width: 300px;
+            z-index: 1;
         }
 
         .field__input {
+            box-sizing:  border-box;
+            font-family: monospace;
             height: 60px;
-            width: 310px;
+            width: 100%;
             border: 2px solid #c1c1c1;
             border-radius: 8px;
             text-align: center;
@@ -23,21 +26,23 @@
 
         .slider {
             background-color: #c1c1c1;
-            width: 100%;
+            width: calc(100% - 16px);
             height: 2px;
             position: absolute;
             bottom: 0;
             left: 8px;
+            z-index: 2;
         }
 
         .slider__bar {
             display: block;
             height: 100%;
-            width: 50%;
+            width: 215px;
             background-color: #e78f3e;
             position: absolute;
             left: 0;
             top: 0;
+            z-index: 3;
         }
 
         .slider__thumb {
@@ -53,6 +58,7 @@
             border: 4px solid #fff;
             box-shadow: 0 0 5px 0 rgba(50, 50, 50, 0.75);
             cursor: pointer;
+            z-index: 4;
         }
     </style>
 </head>
@@ -67,9 +73,15 @@
     </div>
     <script>
         const initSlider = (min, max, current) => {
+            const $input = document.querySelector('.field__input');
             const $slider = document.querySelector('.slider');
             const $thumb = $slider.querySelector('.slider__thumb');
             const $bar = $slider.querySelector('.slider__bar');
+            const step = (max - min) / ($slider.offsetWidth - $thumb.offsetWidth);
+
+            $input.value = current;
+            $thumb.style.left = Math.round((current - min) / step) + "px";
+            $bar.style.width = Math.round((current - min) / step) + "px";
 
             $thumb.onmousedown = function (event) {
                 let shiftX = event.clientX - $thumb.getBoundingClientRect().left;
@@ -79,19 +91,19 @@
 
                 function onMouseMove(event) {
                     let newLeft = event.clientX - shiftX - $slider.getBoundingClientRect().left;
-
-                    // курсор вышел из слайдера => оставить бегунок в его границах.
-                    if (newLeft < 0) {
-                      newLeft = 0;
-                    }
-
                     let rightEdge = $slider.offsetWidth - $thumb.offsetWidth;
 
-                    if (newLeft > rightEdge) {
-                      newLeft = rightEdge;
+                    if (newLeft < 0) {
+                       newLeft = 0;
                     }
 
+                    if (newLeft > rightEdge) {
+                       newLeft = rightEdge;
+                    }
+
+                    $input.value = Math.round(step * newLeft) + min;
                     $thumb.style.left = newLeft + "px";
+                    $bar.style.width = newLeft + "px";
                 }
 
                 function onMouseUp() {
@@ -99,8 +111,27 @@
                     document.removeEventListener('mousemove', onMouseMove);
                 }
             }
+
+            $input.addEventListener('change', (event) => {
+                let inputValue = event.target.value;
+
+                if (inputValue < min || isNaN(inputValue)) {
+                    inputValue = min
+                }
+
+                if (inputValue > max) {
+                    inputValue = max
+                }
+
+                let newLeft = Math.round((inputValue - min) / step);
+
+                $input.value = inputValue;
+                $thumb.style.left = newLeft + "px";
+                $bar.style.width = newLeft + "px";
+            });
         }
-        initSlider(0, 100000, 10000);
+
+        initSlider(0, 40000, 10000);
 
     </script>
 </body>
