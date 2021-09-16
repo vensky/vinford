@@ -8,5 +8,4 @@
 @@include('./_components/_swiper.js');
 @@include('./_components/_tabs.js');
 @@include('./_components/_select.js');
-
-
+@@include('./_components/_map.js');

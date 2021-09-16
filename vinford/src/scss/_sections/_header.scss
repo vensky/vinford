@@ -16,7 +16,7 @@
     }
 
     &--scroll {
-        background: linear-gradient(180deg, $second-color 0%, rgba($second-color, 0) 100%);
+        background: linear-gradient(180deg, $second-color 0%, $second-color 25%, rgba($second-color, 0) 100%);
         color: $main-color;
 
         .header__logo {

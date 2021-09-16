@@ -198,7 +198,7 @@
                 <p class="features__desc">Следим за самочувствием ребенка во время нахождения в детском саду, регулярно проводим спортивные занятия с детьми</p>
             </div>
         </div>
-        <div class="swiper">
+        <div class="swiper swiper--endGradient swiper--endGradient">
             <ul class="tabs features__tabs swiper-wrapper">
                 <li class="swiper-slide">
                     <button class="tab tab--active" type="button" data-feature-img="feature-health.jpg" data-feature-desc="Следим за самочувствием ребенка во время нахождения в детском саду, регулярно проводим спортивные занятия с детьми">
@@ -241,11 +241,11 @@
                     </button>
                 </li>
                 <li class="swiper-slide">
-                    <button class="tab" type="button">
+                    <button class="tab" type="button" data-feature-img="feature-health.jpg" data-feature-desc="Следим за самочувствием ребенка во время нахождения в детском саду, регулярно проводим спортивные занятия с детьми">
                         <svg class="tab__icon tab__icon--adaptation">
                             <use xlink:href="#icon-adaptation"></use>
                         </svg>
-                        <span class="tab__title">Система<br>адаптации</span>
+                        <span class="tab__title">Система <br>адаптации</span>
                     </button>
                 </li>
                 <li class="swiper-slide">
@@ -269,7 +269,7 @@
                         <svg class="tab__icon tab__icon--walk">
                             <use xlink:href="#icon-walk"></use>
                         </svg>
-                        <span class="tab__title">Прогулочные<br>площадки</span>
+                        <span class="tab__title">Прогулочные <br>площадки</span>
                     </button>
                 </li>
             </ul>
@@ -278,9 +278,9 @@
 </section>
 
             <section class="section contacts" id="contacts">
-    <div class="map contacts__map">
+    <div class="map contacts__map" id="googlemaps">
     </div>
-    <div class="container contacts__container">
+    <div class="container contacts__container hidden">
         <form class="contacts__form" method="" action="">
             <!-- fieldset.field.select.task-form__group#selectTask
                     span.field__label.select__label(id="service") Выбирите услугу -->
@@ -340,6 +340,7 @@
         </main>
     </div>
     <!-- build:js-->
+    <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDrHToX9u5kf_XnbgIEioQkQIYMT-yYiDY&sensor=false"></script>
     <script src="js/scripts.js"></script>
     <!-- endbuild-->
 </body>

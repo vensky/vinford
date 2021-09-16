@@ -3,31 +3,68 @@
     height: 96px;
     position: relative;
 
-    &::before {
-        content: "";
-        position: absolute;
-        height: 100%;
-        width: 30px;
-        background: linear-gradient(to right, $second-color 0, rgba($second-color, 0) 100%);
-        /*background: linear-gradient(to left, red 0, red 30%, rgba(red, 0) 100%);*/
-        top: 0;
-        left: 0;
-        z-index: 2;
+    @media (min-width: $tablet) {
+        height: 370px;
     }
 
-    &::after {
-        content: "";
-        position: absolute;
-        height: 100%;
-        width: 60px;
-        background: linear-gradient(to left, $second-color 0, $second-color 60%, rgba($second-color, 0) 100%);
-        /*background: linear-gradient(to left, red 0, red 30%, rgba(red, 0) 100%);*/
-        top: 0;
-        right: 0;
-        z-index: 2;
+    @media (min-width: $desktop) {
+        height: 645px;
+    }
+
+    &--startGradient {
+        &::before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 30px;
+            background: linear-gradient(to right, $second-color 0, rgba($second-color, 0) 100%);
+            top: 0;
+            left: 0;
+            z-index: 2;
+
+            @media (min-width: $tablet) {
+                width: 150px;
+            }
+
+            @media (min-width: $desktop) {
+                display: none;
+            }
+        }
+    }
+
+    &--endGradient {
+        &::after {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 60px;
+            background: linear-gradient(to left, $second-color 0, $second-color 60%, rgba($second-color, 0) 100%);
+            top: 0;
+            right: 0;
+            z-index: 2;
+
+            @media (min-width: $tablet) {
+                width: 200px;
+            }
+
+            @media (min-width: $desktop) {
+                display: none;
+            }
+        }
     }
 
     &-slide {
         width: 131px;
+
+        @media (min-width: $tablet) {
+            height: 160px;
+            width: 219px;
+        }
+
+        @media (min-width: $desktop) {
+            width: 295px;
+            height: 190px;
+        }
     }
+
 }
