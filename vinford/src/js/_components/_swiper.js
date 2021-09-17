@@ -12,7 +12,6 @@ const swiperInit = () => {
                 slidesPerView: 'auto',
                 on: {
                     slideChange: () => {
-                        console.log(swiper.isEnd)
                         if (swiper.isEnd) {
                             swiper.wrapperEl.style.marginLeft = '-200px';
                             swiper.el.classList.remove('swiper--endGradient');

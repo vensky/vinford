@@ -39,7 +39,7 @@ module.exports = function html(env='dev', version) {
                 typograf({ locale: ['ru', 'en-US'] }),
                 replace({
                     css: `css/style.min-v${version}.css`,
-                    js: `js/scripts.min-v${version}.js`,
+                    /*js: `js/scripts.min-v${version}.js`,*/
                 }),
                 dest('build')
             );

@@ -10099,67 +10099,6 @@ var preschools = [{
     "lng": 37.6544
   }
 }];
-var currentContacts = '0';
-var markersArr = [];
-var apiKey = 'AIzaSyDrHToX9u5kf_XnbgIEioQkQIYMT-yYiDY';
-var map;
-var icon = {
-  url: 'img/icon-map-marker.svg',
-  scaledSize: new google.maps.Size(47, 60),
-  origin: new google.maps.Point(0, 0),
-  anchor: new google.maps.Point(0, 0)
-};
-var iconActive = {
-  url: 'img/icon-map-marker.svg',
-  scaledSize: new google.maps.Size(73, 90),
-  origin: new google.maps.Point(0, 0),
-  anchor: new google.maps.Point(0, 0)
-};
-
-function initialize() {
-  if (document.getElementById('googlemaps') === null) {
-    return;
-  }
-
-  var mapOptions = {
-    zoom: 14,
-    center: new google.maps.LatLng(55.7515, 37.6197),
-    panControl: false,
-    streetViewControl: false,
-    mapTypeControl: false,
-    styles: [{
-      stylers: [{
-        lightness: 45
-      }]
-    }]
-  };
-  var map = new google.maps.Map(document.getElementById('googlemaps'), mapOptions);
-  var markers = [];
-
-  for (var i = 0; i < preschools.length; i++) {
-    var marker = new google.maps.Marker({
-      position: preschools[i].latlng,
-      map: map,
-      icon: icon,
-      id: i
-    });
-    google.maps.event.addListener(marker, 'click', function () {
-      for (var j = 0; j < markers.length; j++) {
-        // markers[j].setIcon(icon);
-        markers[j].setVisible(false);
-      }
-
-      this.setIcon(iconActive);
-      this.setVisible(true);
-      currentContacts = marker.id;
-    });
-    markers.push(marker);
-  }
-
-  markersArr = markers;
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
 ;
 var $header = document.querySelector('.header');
 
@@ -10289,8 +10228,6 @@ var swiperInit = function swiperInit() {
         slidesPerView: 'auto',
         on: {
           slideChange: function slideChange() {
-            console.log(swiper.isEnd);
-
             if (swiper.isEnd) {
               swiper.wrapperEl.style.marginLeft = '-200px';
               swiper.el.classList.remove('swiper--endGradient');
@@ -10357,7 +10294,82 @@ clickToTab();
 ;
 
 var initCustomSelect = function initCustomSelect(el) {
-  console.log(markersArr);
+  /*------GoogelMaps--------*/
+  var apiKey = 'AIzaSyDrHToX9u5kf_XnbgIEioQkQIYMT-yYiDY';
+  var map;
+  var icon = {
+    url: 'img/icon-map-marker.svg',
+    scaledSize: new google.maps.Size(47, 60),
+    origin: new google.maps.Point(0, 0),
+    anchor: new google.maps.Point(0, 0)
+  };
+  var iconActive = {
+    url: 'img/icon-map-marker.svg',
+    scaledSize: new google.maps.Size(73, 90),
+    origin: new google.maps.Point(0, 0),
+    anchor: new google.maps.Point(0, 0)
+  };
+  var markers = [];
+
+  function initialize() {
+    if (document.getElementById('googlemaps') === null) {
+      return;
+    }
+
+    var mapOptions = {
+      zoom: 14,
+      center: new google.maps.LatLng(55.7515, 37.6197),
+      panControl: false,
+      streetViewControl: false,
+      mapTypeControl: false,
+      styles: [{
+        stylers: [{
+          lightness: 45
+        }]
+      }]
+    };
+    var map = new google.maps.Map(document.getElementById('googlemaps'), mapOptions);
+
+    for (var i = 1; i < preschools.length; i++) {
+      var marker = new google.maps.Marker({
+        position: preschools[i].latlng,
+        map: map,
+        icon: icon,
+        id: String(i)
+      });
+      markers.push(marker);
+    }
+
+    var _iterator3 = _createForOfIteratorHelper(markers),
+        _step3;
+
+    try {
+      var _loop3 = function _loop3() {
+        var marker = _step3.value;
+        google.maps.event.addListener(marker, 'click', function () {
+          for (var j = 0; j < markers.length; j++) {
+            markers[j].setVisible(false);
+          }
+
+          marker.setIcon(iconActive);
+          marker.setVisible(true);
+          updateSelectOption(marker.id);
+        });
+      };
+
+      for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+        _loop3();
+      }
+    } catch (err) {
+      _iterator3.e(err);
+    } finally {
+      _iterator3.f();
+    }
+  }
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+  /* ---------- */
+
   var $selectNative = el.querySelector('.select-native');
   var $selectCustom = el.querySelector('.select-custom');
   var $selectCustomTrigger = $selectCustom.querySelector('.select-custom__trigger');
@@ -10365,7 +10377,6 @@ var initCustomSelect = function initCustomSelect(el) {
   var optionSelected = '';
   var $contactsListAll = document.querySelector('.contacts__list--all');
   var $contactsListSingle = document.querySelector('.contacts__list--single');
-  var currentOptionId = '0';
 
   var watchClickOutside = function watchClickOutside(e) {
     var didClickedOutside = !$selectCustom.contains(e.target);
@@ -10408,25 +10419,47 @@ var initCustomSelect = function initCustomSelect(el) {
       $contactsListAll.classList.remove('contacts__list--hidden');
       $contactsListSingle.classList.add('contacts__list--hidden');
 
-      var _iterator3 = _createForOfIteratorHelper(markersArr),
-          _step3;
+      var _iterator4 = _createForOfIteratorHelper(markers),
+          _step4;
 
       try {
-        for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
-          var marker = _step3.value;
+        for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
+          var marker = _step4.value;
           marker.setVisible(true);
           marker.setIcon(icon);
         }
       } catch (err) {
-        _iterator3.e(err);
+        _iterator4.e(err);
       } finally {
-        _iterator3.f();
+        _iterator4.f();
       }
     } else {
       $contactsListAll.classList.add('contacts__list--hidden');
       $contactsListSingle.classList.remove('contacts__list--hidden');
       $contactsListSingle.querySelector('.contacts__subtitle').textContent = preschools[value].address;
       $contactsListSingle.querySelector('.contacts__link').textContent = preschools[value].tel;
+
+      var _iterator5 = _createForOfIteratorHelper(markers),
+          _step5;
+
+      try {
+        for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
+          var _marker = _step5.value;
+          console.log(_marker.id, value);
+
+          if (_marker.id !== value) {
+            _marker.setVisible(false);
+          } else {
+            _marker.setVisible(true);
+
+            _marker.setIcon(iconActive);
+          }
+        }
+      } catch (err) {
+        _iterator5.e(err);
+      } finally {
+        _iterator5.f();
+      }
     }
   };
 

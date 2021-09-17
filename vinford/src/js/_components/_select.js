@@ -1,5 +1,72 @@
 const initCustomSelect = (el) => {
-console.log(markersArr)
+
+
+    /*------GoogelMaps--------*/
+
+    var apiKey = 'AIzaSyDrHToX9u5kf_XnbgIEioQkQIYMT-yYiDY';
+    var map;
+    var icon = {
+        url: 'img/icon-map-marker.svg',
+        scaledSize: new google.maps.Size(47, 60),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(0, 0)
+    };
+
+    var iconActive = {
+        url: 'img/icon-map-marker.svg',
+        scaledSize: new google.maps.Size(73, 90),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(0, 0)
+    };
+
+    var markers = [];
+
+    function initialize() {
+        if (document.getElementById('googlemaps') === null) {
+            return;
+        }
+
+        var mapOptions = {
+            zoom: 14,
+            center: new google.maps.LatLng(55.7515, 37.6197),
+            panControl: false,
+            streetViewControl: false,
+            mapTypeControl: false,
+            styles: [{
+                stylers: [
+                    { lightness: 45 }
+                ]
+            }]
+        };
+
+        var map = new google.maps.Map(document.getElementById('googlemaps'), mapOptions);
+
+        for (let i = 1; i < preschools.length; i++) {
+            var marker = new google.maps.Marker({
+                position: preschools[i].latlng,
+                map: map,
+                icon: icon,
+                id: String(i)
+            });
+            markers.push(marker);
+        }
+
+        for (let marker of markers) {
+            google.maps.event.addListener(marker, 'click', (function() {
+                for (let j = 0; j < markers.length; j++) {
+                    markers[j].setVisible(false);
+                }
+                marker.setIcon(iconActive);
+                marker.setVisible(true);
+                updateSelectOption(marker.id);
+            }));
+        }
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+    /* ---------- */
+
     const $selectNative = el.querySelector('.select-native');
     const $selectCustom = el.querySelector('.select-custom');
     const $selectCustomTrigger = $selectCustom.querySelector('.select-custom__trigger');
@@ -9,7 +76,6 @@ console.log(markersArr)
 
     const $contactsListAll = document.querySelector('.contacts__list--all');
     const $contactsListSingle = document.querySelector('.contacts__list--single');
-    let currentOptionId = '0';
 
     const watchClickOutside = (e) => {
         const didClickedOutside = !$selectCustom.contains(e.target);
@@ -51,7 +117,7 @@ console.log(markersArr)
         if (value === "0") {
             $contactsListAll.classList.remove('contacts__list--hidden');
             $contactsListSingle.classList.add('contacts__list--hidden');
-            for (let marker of markersArr) {
+            for (let marker of markers) {
                 marker.setVisible(true);
                 marker.setIcon(icon);
             }
@@ -60,6 +126,16 @@ console.log(markersArr)
             $contactsListSingle.classList.remove('contacts__list--hidden');
             $contactsListSingle.querySelector('.contacts__subtitle').textContent = preschools[value].address;
             $contactsListSingle.querySelector('.contacts__link').textContent = preschools[value].tel;
+
+            for (let marker of markers) {
+                console.log(marker.id, value)
+                if (marker.id !== value) {
+                    marker.setVisible(false);
+                } else {
+                    marker.setVisible(true);
+                    marker.setIcon(iconActive);
+                }
+            }
         }
     };
 
@@ -83,3 +159,4 @@ console.log(markersArr)
 
 const selectContacts = document.querySelector('.contacts__select');
 initCustomSelect(selectContacts);
+
