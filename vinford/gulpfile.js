@@ -32,7 +32,7 @@ function watching() {
 
 module.exports.start = parallel(html, css, js, serve, watching);
 module.exports.test = parallel(html, css);
-module.exports.build = series(clean, html, css, js, img);
+module.exports.build = series(clean, html, css, js, img, font);
 
 module.exports.img = series(img);
 module.exports.svg = series(svg);

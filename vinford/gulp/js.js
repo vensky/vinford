@@ -33,7 +33,7 @@ module.exports = function script(env='dev', version) {
                 src('src/js/app.js'),
                 include(),
                 babel(),
-                terser(),
+                /*terser(),*/
                 rename(`scripts.min-v${version}.js`),
                 dest('build/js')
             );
